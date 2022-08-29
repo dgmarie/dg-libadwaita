@@ -1,6 +1,6 @@
 $asset_suffix: if($variant == 'dark', '-dark', '');
 
-/* macOS window buttons */
+/* macOS window buttons. Most of this (including the images that are used here) is borrowed from https://github.com/vinceliuice/WhiteSur-gtk-theme */
 windowcontrols:not(.empty) {
   button {
     margin: 0 1px 0 0;
