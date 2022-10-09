@@ -1,7 +1,9 @@
 $variant: 'light';
 
+@import 'functions';
 @import 'accent-colors-temp';
 @import 'palette';
+@import 'colors';
 @import 'defaults';
 @import 'common';
 @import 'nautilus';
