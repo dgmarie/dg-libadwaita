@@ -3,67 +3,30 @@ $asset_suffix: if($variant == 'dark', '-dark', '');
 /* macOS window buttons. Most of this (including the images that are used here) is borrowed from https://github.com/vinceliuice/WhiteSur-gtk-theme */
 windowcontrols:not(.empty) {
   button {
+    margin: 0 1px 0 0;
+    padding: 0;
     background-position: center;
     background-repeat: no-repeat;
-    background-clip: padding-box;
-    border: 2px solid transparent;
-    background-size: 14px;
-    outline-width: 0px;
-    min-height: 14px;
-    min-width: 14px;
-    margin: 0 2px 0 1px;
-    padding: 0;
-    border-radius: 99px;
-
-    image {
-      color: transparent;
-      margin: -4px; // So we can make the window button smaller than 16px
-    }
-
-    &.close:not(:backdrop) {
-      background-color: $close_bg_color;
-      &:active {
-        background-color: $close_bg_color_active;
-      }
-    }
-
-    &.minimize:not(:backdrop) {
-      background-color: $min_bg_color;
-      &:active {
-        background-color: $min_bg_color_active;
-      }
-    }
-
-    &.maximize:not(:backdrop) {
-      background-color: $max_bg_color;
-      &:active {
-        background-color: $max_bg_color_active;
-      }
-    }
-
-    &:backdrop {
-      background-color: $window_button_backdrop;
-    }
-
+    background-size: 16px 16px;
+    color: transparent;
+    min-width: 16px;
+    min-height: 16px;
     @each $k in ('close', 'maximize', 'minimize') {
-      &.#{$k} {
-        &:hover,
-        &:active {
-          background-image: -gtk-scaled(url('mac-icons/titlebutton-#{$k}.png'),
-                                        url('mac-icons/titlebutton-#{$k}@2.png'));
+      @each $l, $m in ('',''), (':backdrop','-backdrop'), (':backdrop:hover','-backdrop-hover'), (':hover','-hover'), (':active','-active') {
+        &.#{$k}#{$l} {
+          background-image: -gtk-scaled(url('mac-icons/titlebutton-#{$k}#{$m}#{$asset_suffix}.png'),
+                                       url('mac-icons/titlebutton-#{$k}#{$m}#{$asset_suffix}@2.png'));
         }
       }
     }
   }
-
   .fullscreen &,
   .maximized & {
     button {
-      &.maximize {
-        &:hover,
-        &:active {
-          background-image: -gtk-scaled(url('mac-icons/titlebutton-restore.png'),
-                                        url('mac-icons/titlebutton-restore@2.png'));
+      @each $l, $m in ('',''), (':backdrop','-backdrop'), (':backdrop:hover','-backdrop-hover'), (':hover','-hover'), (':active','-active') {
+        &.maximize#{$l} {
+          background-image: -gtk-scaled(url('mac-icons/titlebutton-restore#{$m}#{$asset_suffix}.png'),
+                                       url('mac-icons/titlebutton-restore#{$m}#{$asset_suffix}@2.png'));
         }
       }
     }
