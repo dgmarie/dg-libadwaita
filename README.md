@@ -2,7 +2,7 @@
 
 # dg-Libadwaita
 
-**A macOS + Yaru configuration for Libadwaita**
+**A Yaru inspired configuration for Libadwaita**
 
 This theme is supposed to be used with [this](https://github.com/dgsasha/dg-gnome-theme).
 
