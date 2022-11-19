@@ -6,25 +6,28 @@
 
 This theme is supposed to be used with [qualia GTK theme](https://github.com/dgsasha/dg-gnome-theme).
 
-</div>
-
 ## Installing
+
 ```
 install.sh
 ```
 
+</div>
+
+```
 OPTIONS:
-	- ` -t <theme_variant>` *optional*
-		- Specify theme variant.
-		- Options: `light` `dark`.
-  - Default: `light`.
+  -t <theme_variant>. Set theme variant.
+     [light|dark] (Default: light)
+  -c <color_name>. Specify accent color.
+     [orange|bark|sage|olive|viridian|prussiangreen|lightblue|blue|purple|magenta|pink|red]
+     (Default: orange)
+  -h Show this message.
+```
 
-	- ` -c <color_name>` *optional*
-		- Specify accent color.
-		- Options: `orange` `bark` `sage` `olive` `viridian` `prussiangreen` `lightblue` `blue` `purple` `magenta` `pink` `red`.
-  - Default: `orange`.
+<div align="center">
 
-## Credits
-A huge thanks to:
-- [vinceliuice](https://github.com/vinceliuice) for [WhiteSur-gtk-theme](https://github.com/vinceliuice/WhiteSur-gtk-theme)
-- [lassekongo83](https://github.com/lassekongo83) for [adw-gtk3](https://github.com/lassekongo83/adw-gtk3)
+## Credits :)
+### A huge thanks to:
+#### [Ubuntu](https://ubuntu.com/) for [Yaru](https://github.com/ubuntu/yaru), [vinceliuice](https://github.com/vinceliuice) for [WhiteSur-gtk-theme](https://github.com/vinceliuice/WhiteSur-gtk-theme)
+
+</div>

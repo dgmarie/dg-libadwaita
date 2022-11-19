@@ -19,8 +19,11 @@ while getopts 't:c:h' flag; do
   c) color="${OPTARG}" ;;
   h)
     echo "OPTIONS:"
-    echo "  -t <theme_variant>. Set theme variant. [light|dark] (Default: light)"
-    echo "  -c <color_name>. Specify accent color. [orange|bark|sage|olive|viridian|prussiangreen|lightblue|blue|purple|magenta|pink|red] (Default: orange)"
+    echo "  -t <theme_variant>. Set theme variant."
+    echo "     [light|dark] (Default: light)"
+    echo "  -c <color_name>. Specify accent color."
+    echo "     [orange|bark|sage|olive|viridian|prussiangreen|lightblue|blue|purple|magenta|pink|red]"
+    echo "     (Default: orange)"
     echo "  -h Show this message."
     exit 0
     ;;
