@@ -139,6 +139,7 @@ spinbutton > button.image-button.up:not(.flat):not(.raised):not(.suggested-actio
 spinbutton > button.image-button.down:not(.flat):not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque),
 searchbar > revealer > box .close,
 infobar .close,
+placessidebar button.sidebar-button,
 button.flat {
   @extend %button_flat;
 }
