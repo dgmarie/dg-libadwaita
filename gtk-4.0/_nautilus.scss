@@ -21,4 +21,9 @@
   placessidebar {
     background-color: if($variant=='light', gtkcolor(window_bg_color), gtkcolor(view_bg_color));
   }
+  .operations-list row.activatable {
+    &, &:hover, &:active, &:selected {
+      box-shadow: none;
+    }
+  }
 }
