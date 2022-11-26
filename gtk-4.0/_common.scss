@@ -112,10 +112,18 @@ splitbutton {
   0 1px 3px 1px transparentize(black, .93),
   0 2px 6px 2px transparentize(black, .97);
 
+  button.flat.link {
+    &,
+    &:hover,
+    &:active,
+    &:checked {
+      box-shadow: none;
+    }
+  }
   row {
-    &.activatable:hover,
-    &.activatable:active,
-    &.activatable.has-open-popup {
+    &:hover,
+    &:active,
+    &.has-open-popup {
       box-shadow: none;
     }
   }
