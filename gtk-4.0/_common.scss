@@ -135,8 +135,12 @@ button.link {
 }
 
 %button_flat {
-  &:not(:hover):not(.keyboard-activating):not(:active):not(:checked) {
-    box-shadow: none;
+  box-shadow: none;
+  &:hover,
+  &.keyboard-activating,
+  &:active,
+  &:checked {
+    box-shadow: inset 0 0 0 1px $button_border;
   }
 }
 
@@ -158,15 +162,53 @@ button.flat {
 }
 
 headerbar, .toolbar, searchbar > revealer > box, actionbar > revealer > box {
-  button:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque).arrow-button,
-  button:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque).image-button,
-  button:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque).image-text-button,
-  menubutton:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque).image-button > button,
-  splitbutton:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque),
-  splitbutton:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque) button {
+  button:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque) {
+    &.arrow-button,
+    &.image-button,
+    &.image-text-button {
+      @extend %button_flat;
+    }
+  }
+  menubutton:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque) {
     @extend %button_flat;
   }
+  splitbutton:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque) {
+    &, button {
+      @extend %button_flat;
+    }
+  }
+  .linked button:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque) {
+    &.arrow-button,
+    &.image-button,
+    &.image-text-button {
+      box-shadow: inset 0 0 0 1px $button_border;
+    }
+  }
+  menubutton.raised > button:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque) {
+    &.arrow-button,
+    &.image-button,
+    &.image-text-button {
+      box-shadow: inset 0 0 0 1px $button_border;
+    }
+  }
+  popover {
+    button:not(.flat):not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque) {
+      &.arrow-button,
+      &.image-button,
+      &.image-text-button {
+        box-shadow: inset 0 0 0 1px $button_border;
+      }
+    }
+
+    menubutton:not(.flat):not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque) {
+      &.image-button > button {
+        box-shadow: inset 0 0 0 1px $button_border;
+      }
+    }
+  }
 }
+
+
 
 columnview.view,
 treeview.view {

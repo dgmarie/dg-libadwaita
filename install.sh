@@ -6,7 +6,8 @@ theme_variants=('light' 'dark')
 color="orange"
 theme="light"
 suffix=""
-gtk4_dir="${HOME}/.config/gtk-4.0"
+gtk4_conf_dir="${HOME}/.config/gtk-4.0"
+gtk4_dir="${HOME}/.local/share/themes"
 
 nc='\033[0m'
 bold='\033[1m'
@@ -53,10 +54,10 @@ sed -i "/\$accent_color:/s/orange/${color}/" "gtk-4.0/_accent-colors-temp.scss"
 
 # Install gtk4 configuration
 if [[ "$(command -v sassc)" ]]; then
-  echo -e "${bgreen}Installing${nc} the ${bold}${color} ${theme} qualia Libadwaita theme ${nc}in ${bold}${gtk4_dir}${nc}"
-  mkdir -p "${gtk4_dir}"
-  cp -rf "gtk-4.0/assets/mac-icons/" "${gtk4_dir}"
-  sassc -M -t expanded "gtk-4.0/gtk${suffix}.scss" "${gtk4_dir}/gtk.css"
+  echo -e "${bgreen}Installing${nc} the ${bold}${color} ${theme} qualia Libadwaita theme ${nc}in ${bold}${gtk4_conf_dir}${nc}"
+  mkdir -p "${gtk4_conf_dir}"
+  cp -rf "gtk-4.0/assets/mac-icons/" "${gtk4_conf_dir}"
+  sassc -M -t expanded "gtk-4.0/gtk${suffix}.scss" "${gtk4_conf_dir}/gtk.css"
   rm -rf "gtk-4.0/_accent-colors-temp.scss"
 else
   >&2 echo "ERROR: 'sassc' not found."
