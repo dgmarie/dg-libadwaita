@@ -98,6 +98,16 @@ row {
   }
 }
 
+button {
+  row {
+    &.activatable:hover,
+    &.activatable:active,
+    &.activatable.has-open-popup {
+      box-shadow: none;
+    }
+  }
+}
+
 button,
 menubutton,
 splitbutton {
