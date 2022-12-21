@@ -125,7 +125,7 @@ splitbutton {
     0 2px 6px 2px transparentize(black, .97),
     inset 0 0 0 1px $button_border;
 
-    row {
+    > row {
       &:hover,
       &:active,
       &.has-open-popup {
