@@ -218,7 +218,14 @@ headerbar, .toolbar, searchbar > revealer > box, actionbar > revealer > box {
   }
 }
 
-
+viewswitcher.narrow button {
+  &,
+  &:hover,
+  &:active,
+  &:checked {
+    box-shadow: none;
+  }
+}
 
 columnview.view,
 treeview.view {
