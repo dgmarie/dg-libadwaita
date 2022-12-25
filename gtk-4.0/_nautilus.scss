@@ -9,6 +9,11 @@
       background-color: if($variant=='light', gtkcolor(view_bg_color), gtkcolor(window_bg_color));
     }
   }
+  placessidebar {
+    background-color: if($variant=='light', gtkcolor(window_bg_color), gtkcolor(view_bg_color));
+  }
+}
+.nautilus-window {
   #NautilusPathBar {
     box-shadow: inset 0 0 0 1px $button_border;
   }
@@ -18,12 +23,23 @@
   #NautilusPathButton.current-dir {
     box-shadow: none;
   }
-  placessidebar {
-    background-color: if($variant=='light', gtkcolor(window_bg_color), gtkcolor(view_bg_color));
-  }
   .operations-list row.activatable {
     &, &:hover, &:active, &:selected {
       box-shadow: none;
     }
+  }
+}
+filechooser {
+  treeview, gridview {
+    &.view {
+      background-color: if($variant=='light', gtkcolor(view_bg_color), gtkcolor(window_bg_color));
+    }
+  }
+  placessidebar,
+  treeview header {
+    background-color: if($variant=='light', gtkcolor(window_bg_color), gtkcolor(view_bg_color));
+  }
+  #pathbarbox {
+    border-bottom-color: $border_color;
   }
 }

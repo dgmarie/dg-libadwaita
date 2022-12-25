@@ -2,3 +2,4 @@ $button_border: gtkalpha(currentColor, 0.05);
 $popover_border: if($variant=='light', transparentize(black, 0.93), transparentize(white, 0.93));
 $window_outline_color: transparentize(white, 0.9);
 $opaque_button_border: gtkalpha(currentColor, 0.15);
+$border_color: gtkalpha(currentColor, 0.15)
