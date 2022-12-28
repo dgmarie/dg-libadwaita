@@ -6,6 +6,7 @@ theme_variants=('light' 'dark')
 color="orange"
 theme="light"
 suffix=""
+variant="macos"
 gtk4_conf_dir="${HOME}/.config/gtk-4.0"
 gtk4_dir="${HOME}/.local/share/themes"
 
@@ -14,10 +15,11 @@ bold='\033[1m'
 red='\033[0;31m'
 bgreen='\033[1;32m'
 
-while getopts 't:c:h' flag; do
+while getopts 't:c:sh' flag; do
   case "${flag}" in
   t) theme="${OPTARG}" ;;
   c) color="${OPTARG}" ;;
+  s) variant="symbolic" ;;
   h)
     echo "OPTIONS:"
     echo "  -t <theme_variant>. Set theme variant."
@@ -25,6 +27,7 @@ while getopts 't:c:h' flag; do
     echo "  -c <color_name>. Specify accent color."
     echo "     [orange|bark|sage|olive|viridian|prussiangreen|lightblue|blue|purple|magenta|pink|red]"
     echo "     (Default: orange)"
+    echo "  -s Enable symbolic libadwaita style window controls."
     echo "  -h Show this message."
     exit 0
     ;;
@@ -56,8 +59,12 @@ sed -i "/\$accent_color:/s/orange/${color}/" "gtk-4.0/_accent-colors-temp.scss"
 if [[ "$(command -v sassc)" ]]; then
   echo -e "${bgreen}Installing${nc} the ${bold}${color} ${theme} qualia Libadwaita theme ${nc}in ${bold}${gtk4_conf_dir}${nc}"
   mkdir -p "${gtk4_conf_dir}"
-  cp -rf "gtk-4.0/assets/mac-icons/" "${gtk4_conf_dir}"
-  sassc -M -t expanded "gtk-4.0/gtk${suffix}.scss" "${gtk4_conf_dir}/gtk.css"
+  if [[ ${variant} == "macos" ]]; then
+    cp -rf "gtk-4.0/assets/mac-icons/" "${gtk4_conf_dir}"
+  else
+    rm -rf "${gtk4_conf_dir}/mac-icons"
+  fi
+  sassc -M -t expanded "gtk-4.0/gtk${suffix}-${variant}.scss" "${gtk4_conf_dir}/gtk.css"
   rm -rf "gtk-4.0/_accent-colors-temp.scss"
 else
   >&2 echo "ERROR: 'sassc' not found."

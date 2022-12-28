@@ -21,6 +21,7 @@ OPTIONS:
   -c <color_name>. Specify accent color.
      [orange|bark|sage|olive|viridian|prussiangreen|lightblue|blue|purple|magenta|pink|red]
      (Default: orange)
+  -s Enable symbolic libadwaita style window controls.
   -h Show this message.
 ```
 
