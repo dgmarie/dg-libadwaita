@@ -136,7 +136,9 @@ splitbutton {
   }
 }
 
-button.link {
+button.link,
+spinbutton.horizontal > button,
+spinbutton.vertical > button {
   &,
   &:hover,
   &:active,
@@ -163,8 +165,6 @@ button.emoji-section.image-button:not(.raised):not(.suggested-action):not(.destr
 popover.menu button.image-button.model,
 popover.menu button.circular.image-button.model,
 window.dialog.message .dialog-action-area > button,
-spinbutton > button.image-button.up:not(.flat):not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque),
-spinbutton > button.image-button.down:not(.flat):not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque),
 searchbar > revealer > box .close,
 infobar .close,
 placessidebar button.sidebar-button,
