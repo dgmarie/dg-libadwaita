@@ -90,7 +90,7 @@ modelbutton {
   }
 }
 
-row {
+.navigation-sidebar > row {
   &.activatable:hover,
   &.activatable:active,
   &.activatable.has-open-popup {
@@ -98,21 +98,18 @@ row {
   }
 }
 
-button {
-  row {
-    &.activatable:hover,
-    &.activatable:active,
-    &.activatable.has-open-popup {
-      box-shadow: none;
-    }
-  }
-}
-
 button,
-menubutton,
 splitbutton {
   &.suggested-action, &.destructive-action, &.opaque {
     box-shadow: inset 0 0 0 1px $opaque_button_border;
+  }
+}
+
+menubutton {
+  &.suggested-action, &.destructive-action, &.opaque {
+    > button {
+      box-shadow: inset 0 0 0 1px $opaque_button_border;
+    }
   }
 }
 
@@ -124,21 +121,14 @@ splitbutton {
     0 1px 3px 1px transparentize(black, .93),
     0 2px 6px 2px transparentize(black, .97),
     inset 0 0 0 1px $button_border;
-
-    > row,
-    row.activatable.header {
-      &:hover,
-      &:active,
-      &.has-open-popup {
-        box-shadow: none;
-      }
-    }
   }
 }
 
 button.link,
 spinbutton.horizontal > button,
-spinbutton.vertical > button {
+spinbutton.vertical > button,
+panelstatusbar > menubutton.popup > button.toggle,
+panelstatusbar > paneltogglebutton button.toggle {
   &,
   &:hover,
   &:active,
