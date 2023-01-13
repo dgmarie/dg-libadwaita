@@ -14,6 +14,11 @@
   }
 }
 .nautilus-window {
+  listview row.activatable {
+    &:hover, &:active, &:selected {
+      box-shadow: inset 0 0 0 1px $button_border;
+    }
+  }
   #NautilusPathBar {
     box-shadow: inset 0 0 0 1px $button_border;
   }
@@ -41,5 +46,18 @@ filechooser {
   }
   #pathbarbox {
     border-bottom-color: $border_color;
+  }
+  treeview.view,
+  gridview.view > child.activatable {
+    &:hover { background-color: $view_hover_color; }
+
+    &:selected {
+      background-color: $view_selected_color;
+      &:hover { background-color: $view_selected_hover_color; }
+    }
+  }
+  gridview.view > child.activatable {
+    &:active { background-color: $view_active_color; }
+    &:selected:active { background-color: $view_selected_active_color; }
   }
 }
