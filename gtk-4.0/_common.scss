@@ -148,6 +148,18 @@ panelstatusbar > paneltogglebutton button.toggle {
   }
 }
 
+calendar {
+  > header > button.image-button {
+    &,
+    &:hover,
+    &.keyboard-activating,
+    &:active,
+    &:checked {
+      box-shadow: none;
+    }
+  }
+}
+
 menubutton.flat > button,
 splitbutton.flat > menubutton > button,
 splitbutton.flat > button,
