@@ -129,7 +129,8 @@ button.link,
 spinbutton.horizontal > button,
 spinbutton.vertical > button,
 panelstatusbar > menubutton.popup > button.toggle,
-panelstatusbar > paneltogglebutton button.toggle {
+panelstatusbar > paneltogglebutton button.toggle,
+entry.flat {
   &,
   &:hover,
   &:active,
