@@ -91,7 +91,7 @@ modelbutton {
 }
 
 .navigation-sidebar > row,
-.open-popover list row {
+popover row {
   &.activatable:hover,
   &.activatable:active,
   &.activatable.has-open-popup {
