@@ -130,11 +130,13 @@ spinbutton.horizontal > button,
 spinbutton.vertical > button,
 panelstatusbar > menubutton.popup > button.toggle,
 panelstatusbar > paneltogglebutton button.toggle,
-entry.flat {
+entry.flat,
+tabbar tabbox.single-tab tab {
   &,
   &:hover,
   &:active,
-  &:checked {
+  &:checked,
+  &:selected {
     box-shadow: none;
   }
 }
@@ -172,7 +174,8 @@ window.dialog.message .dialog-action-area > button,
 searchbar > revealer > box .close,
 infobar .close,
 placessidebar button.sidebar-button,
-button.flat {
+button.flat,
+panelframeswitcher button.image-button {
   @extend %button_flat;
 }
 
@@ -192,7 +195,7 @@ headerbar, .toolbar, searchbar > revealer > box, actionbar > revealer > box {
       @extend %button_flat;
     }
   }
-  .linked button:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque) {
+  .linked:not(.frameheader) button:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque) {
     &.arrow-button,
     &.image-button,
     &.image-text-button {
