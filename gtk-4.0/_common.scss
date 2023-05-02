@@ -114,7 +114,7 @@ menubutton {
   }
 }
 
-.boxed-list,
+.boxed-list:not(.flat),
 .card,
 .card.button {
   &:dir(ltr), &:dir(rtl) {
